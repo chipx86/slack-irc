@@ -1,9 +1,10 @@
 import chai from 'chai';
 import { highlightUsername } from '../lib/helpers';
+
 chai.should();
 
 describe('Bare Slack Username Replacement', () => {
-  ['', ',', '.', ':', '!', '?'].forEach(c => {
+  ['', ',', '.', ':', '!', '?'].forEach((c) => {
     it(`should replace \`username${c}\` with \`@username${c}\``, () => {
       const message = `hey username${c} check this out`;
       const expected = `hey @username${c} check this out`;
